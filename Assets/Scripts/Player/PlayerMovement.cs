@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
 	//HERE IS THE PART OF JUMPING
 	private float jumpHeight = 8.0f;
-	private bool isOnGround;
+	bool isOnGround;
 
 	void Awake ()
 	{
@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (isOnGround) 
 		{
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Space)) 
+			{
 				playerRigidbody.velocity = new Vector3 (0f, jumpHeight, 0f);
 				isOnGround = false;
 			}

@@ -49,13 +49,17 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage (int amount)
     {
-        damaged = true;
+        
+		if (playerAudio.transform.position.y < 0.5f) 
+		{
+			damaged = true;
 
-        currentHealth -= amount;
+			currentHealth -= amount;
 
-        healthSlider.value = currentHealth;
+			healthSlider.value = currentHealth;
 
-        playerAudio.Play ();
+			playerAudio.Play ();
+		}
 
         if(currentHealth <= 0 && !isDead)
         {
